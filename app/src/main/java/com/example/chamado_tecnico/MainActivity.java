@@ -1,16 +1,21 @@
 package com.example.chamado_tecnico;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.Menu;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
+import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
 
+import com.google.android.material.appbar.MaterialToolbar;
 import com.google.android.material.textfield.TextInputEditText;
 import com.google.android.material.textfield.TextInputLayout;
 
@@ -31,6 +36,8 @@ public class MainActivity extends AppCompatActivity {
             return insets;
         });
 
+        MaterialToolbar toolbar = findViewById(R.id.toolbarTop);
+        setSupportActionBar(toolbar);
         btnSailvar = findViewById(R.id.btnSalvar);
         ilEquipamento = findViewById(R.id.ilEquipamento);
         ilNumero = findViewById(R.id.ilNumero);
@@ -74,10 +81,45 @@ public class MainActivity extends AppCompatActivity {
                     int numero = Integer.parseInt(numeroString);
                 } catch (NumberFormatException e) {
                     ilNumero.setError("Numero invalido");
+                    return;
                 }
                 Toast.makeText(MainActivity.this, "Salvo com sucesso",Toast.LENGTH_SHORT).show();
             }
         });
+    }
 
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu){
+        getMenuInflater().inflate(R.menu.menu_top, menu);
+        return true;
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(@NonNull MenuItem item) {
+
+        if (item.getItemId() == R.id.menu_config) {
+            Toast.makeText(this, "Configuração Selecionadas", Toast.LENGTH_SHORT).show();
+        }
+
+        if (item.getItemId() == R.id.menu_sobre) {
+            Intent intent = new Intent(MainActivity.this, SobreActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (item.getItemId() == R.id.menu_cadastro) {
+            Intent intent = new Intent(MainActivity.this, CadastroAcitivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (item.getItemId() == R.id.home) {
+            Intent intent = new Intent(MainActivity.this, MainActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+
+        return super.onOptionsItemSelected(item);
     }
 }
