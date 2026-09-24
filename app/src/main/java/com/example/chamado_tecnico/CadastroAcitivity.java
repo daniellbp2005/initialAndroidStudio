@@ -4,6 +4,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.widget.Button;
+import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.activity.EdgeToEdge;
@@ -29,7 +31,31 @@ public class CadastroAcitivity extends AppCompatActivity {
         });
         MaterialToolbar toolbar = findViewById(R.id.toolbarTop);
         setSupportActionBar(toolbar);
+
+        if(getSupportActionBar() != null){
+            getSupportActionBar()
+                    .setDisplayHomeAsUpEnabled(true);
+        }
+
+        EditText edtChamado = findViewById(R.id.edtChamado);
+        Button btnChamar = findViewById(R.id.btnChamar);
+
+        btnChamar.setOnClickListener(v -> {
+            String chamado = edtChamado.getText().toString().trim();
+            if(chamado.isEmpty()){
+                edtChamado.setError("Digite a descrição do chamado");
+                return;
+            }
+            Toast.makeText(this, "Chamado registrado", Toast.LENGTH_SHORT).show();
+            finish();
+        });
     }
+    @Override
+    public boolean onSupportNavigateUp() {
+        finish();
+        return true;
+    }
+
     @Override
     public boolean onCreateOptionsMenu(Menu menu){
         getMenuInflater().inflate(R.menu.menu_top, menu);
@@ -40,7 +66,7 @@ public class CadastroAcitivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.menu_config) {
-            Toast.makeText(this, "Configuração Selecionadas", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(CadastroAcitivity.this, ConfigAcitiviity.class);
         }
 
         if (item.getItemId() == R.id.menu_sobre) {

@@ -12,6 +12,9 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.Chamado_tecnico">
         <activity
+            android:name=".ConfigAcitiviity"
+            android:exported="false" />
+        <activity
             android:name=".CadastroAcitivity"
             android:exported="false" />
         <activity

@@ -46,6 +46,13 @@ public class MainActivity extends AppCompatActivity {
         edtNumero = findViewById(R.id.edtNumero);
         edtRetorno = findViewById(R.id.edtRetorno);
 
+
+        Button btnConfig = findViewById(R.id.btnConfig);
+        btnConfig.setOnClickListener(v -> {
+            Intent intent = new Intent(MainActivity.this, ConfigAcitiviity.class);
+            startActivity(intent);
+        });
+
         btnSailvar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -98,7 +105,9 @@ public class MainActivity extends AppCompatActivity {
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
 
         if (item.getItemId() == R.id.menu_config) {
-            Toast.makeText(this, "Configuração Selecionadas", Toast.LENGTH_SHORT).show();
+            Intent intent = new Intent(MainActivity.this, ConfigAcitiviity.class);
+            startActivity(intent);
+            return true;
         }
 
         if (item.getItemId() == R.id.menu_sobre) {

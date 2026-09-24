@@ -91,6 +91,17 @@
                 android:layout_margin="16dp"
                 android:text="Chamar"/>
 
+            <Button
+                android:id="@+id/btnConfig"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                app:layout_constraintTop_toBottomOf="@+id/btnSalvar"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                android:layout_marginVertical="4dp"
+                android:layout_marginHorizontal="16dp"
+                android:text="Configurações"/>
+
         </androidx.constraintlayout.widget.ConstraintLayout>
     </ScrollView>
 </androidx.constraintlayout.widget.ConstraintLayout>

@@ -5,7 +5,8 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".CadastroAcitivity">
+    tools:context=".ConfigAcitiviity">
+
     <com.google.android.material.appbar.MaterialToolbar
         android:id="@+id/toolbarTop"
         android:layout_width="0dp"
@@ -18,25 +19,16 @@
         app:subtitleTextColor="@android:color/white"
         app:titleTextColor="@color/white"/>
 
-    <EditText
-        android:id="@+id/edtChamado"
+    <TextView
+        android:id="@+id/txtConfig"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_margin="24dp"
-        android:hint="Descrição do Chamado"
-        android:inputType="text"
+        android:layout_margin="32dp"
+        android:text="Tela de configurações"
+        android:textSize="18sp"
         app:layout_constraintTop_toBottomOf="@+id/toolbarTop"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        />
 
-    <Button
-        android:id="@+id/btnChamar"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="16dp"
-        android:layout_marginHorizontal="24dp"
-        android:text="Salvar"
-        app:layout_constraintTop_toBottomOf="@id/edtChamado"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"/>
 </androidx.constraintlayout.widget.ConstraintLayout>
