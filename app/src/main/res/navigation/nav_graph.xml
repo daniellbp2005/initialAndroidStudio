@@ -15,6 +15,12 @@
         android:name="com.example.chamado_tecnico.PerfilFragment"
         android:label="PERFIL" />
 
+    <fragment
+        android:id="@id/servicosFragment"
+        android:name="com.example.chamado_tecnico.ServicosFragment"
+        android:label="SERVIÇOS"
+        />
+
 
 
 </navigation>

@@ -45,8 +45,10 @@ public class MainActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
 
         BottomNavigationView bottomNav = findViewById(R.id.bottomNav);
+
         NavHostFragment navHostFragment =
-                (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host);
+                (NavHostFragment) getSupportFragmentManager()
+                        .findFragmentById(R.id.nav_host);
 
         NavController navController = navHostFragment.getNavController();
         NavigationUI.setupWithNavController(bottomNav, navController);

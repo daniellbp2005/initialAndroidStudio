@@ -1,5 +1,6 @@
 package com.example.chamado_tecnico;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
@@ -7,6 +8,7 @@ import androidx.fragment.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -58,7 +60,18 @@ public class PerfilFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_perfil, container, false);
+        // 1. Infla o layout primeiro e guarda na variável 'view'
+        View view = inflater.inflate(R.layout.fragment_perfil, container, false);
+
+        // 2. Procura o botão DENTRO da 'view' que você acabou de inflar
+        Button btnAbrirCadastro = view.findViewById(R.id.btnAbrirPerfil);
+
+        btnAbrirCadastro.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), CadastroAcitivity.class);
+            startActivity(intent);
+        });
+
+        // 3. Retorna a view configurada
+        return view;
     }
 }

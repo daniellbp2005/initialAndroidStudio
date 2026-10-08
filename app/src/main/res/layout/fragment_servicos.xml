@@ -4,30 +4,29 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    tools:context=".PerfilFragment">
+    tools:context=".ServicosFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:id="@+id/txtTituloPerfil"
+        android:id="@+id/txtTituloServicos"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Fragmento do Perfil"
+        android:text="Fragmento dos Serviços"
         android:textSize="28sp"
         android:textStyle="bold"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        android:textAlignment="center"
-        />
+        android:textAlignment="center"/>
 
     <Button
-        android:id="@+id/btnAbrirPerfil"
+        android:id="@+id/btnAbrirServicos"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Abrir Perfil"
+        android:text="Abrir Servicos"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txtTituloPerfil"
+        app:layout_constraintTop_toBottomOf="@+id/txtTituloServicos"
         />
 
 </FrameLayout>

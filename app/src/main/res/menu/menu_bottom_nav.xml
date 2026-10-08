@@ -2,6 +2,16 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/homeFragment"
-        android:title="HOMER"
+        android:title="Home"
         android:icon="@android:drawable/ic_menu_view"/>
+    <item
+        android:id="@+id/perfilFragment"
+        android:title="Perfil"
+        android:icon="@android:drawable/ic_menu_manage"
+        />
+    <item
+        android:id="@+id/servicosFragment"
+        android:title="Serviços"
+        android:icon="@android:drawable/ic_menu_set_as"
+        />
 </menu>
